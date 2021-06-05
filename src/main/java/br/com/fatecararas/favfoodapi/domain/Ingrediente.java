@@ -2,14 +2,15 @@ package br.com.fatecararas.favfoodapi.domain;
 
 import java.util.Objects;
 
+//TODO: Configurar ORM
 public class Ingrediente {
-    //TODO: Criar atribtutos [quantidade, unidadeMedida, nome]
 
+    //TODO: Criar e configurar Chave Primária
     private Double quantidade;
     private String unidadeMedida;
     private String nome;
 
-    //TODO: Criar Construtores
+    //TODO: Criar relacionamento com a classe Receita
 
     public Ingrediente(Double quantidade, String unidadeMedida, String nome) {
         this.quantidade = quantidade;
@@ -19,8 +20,6 @@ public class Ingrediente {
 
     public Ingrediente() {
     }
-
-    //TODO: Criar Getters, Setters, HashCode and Equals e toString()
 
     public Double getQuantidade() {
         return quantidade;

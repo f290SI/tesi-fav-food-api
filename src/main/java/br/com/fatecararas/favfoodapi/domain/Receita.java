@@ -4,16 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+//TODO: Configurar ORM
 public class Receita {
-    //TODO: Criar atribtutos [titulo, urlImagem, ingredientes, preparo e receita]
 
+    //TODO: Criar Chave Primária
     private Long id;
     private String titulo;
     private String urlImagem;
+
+    //TODO: Criar relacionamento com a classe Ingrediente
     private List<Ingrediente> ingredientes = new ArrayList<>();
     private String preparo;
-
-    //TODO: Criar Construtores
 
     public Receita(String titulo, String urlImagem, String preparo) {
         this.titulo = titulo;
