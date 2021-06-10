@@ -1,18 +1,21 @@
 package br.com.fatecararas.favfoodapi.domain;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-//TODO: Configurar ORM
+@Entity
+@Table(name = "receitas")
 public class Receita {
 
-    //TODO: Criar Chave Primária
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private String urlImagem;
 
-    //TODO: Criar relacionamento com a classe Ingrediente
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "receita", cascade = CascadeType.ALL, targetEntity = Ingrediente.class)
     private List<Ingrediente> ingredientes = new ArrayList<>();
     private String preparo;
 
@@ -24,8 +27,6 @@ public class Receita {
 
     public Receita() {
     }
-
-    //TODO: Criar Getters, Setters, HashCode and Equals e toString()
 
     public Long getId() {
         return id;
@@ -84,7 +85,7 @@ public class Receita {
     public int hashCode() {
         return Objects.hash(id);
     }
-
+/*
     @Override
     public String toString() {
         return "Receita{" +
@@ -95,5 +96,7 @@ public class Receita {
                 ", preparo='" + preparo + '\'' +
                 '}';
     }
+
+ */
 
 }
